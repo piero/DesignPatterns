@@ -1,3 +1,10 @@
+/*
+ * This code is released under GPLv2 License.
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ */
+
 #include "InitState.h"
 #include "../FSMContext.h"
 #include "PlayingState.h"
@@ -20,7 +27,7 @@ void InitState::handleEvent(const FSMEvent& event)
 {
     switch (event.getType()) {
     case EVENT_USR_PLAY:
-        exitTo(new PlayingState(fsm));
+        exitTo(new PlayingState(_fsm));
         break;
 
     default:

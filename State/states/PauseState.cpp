@@ -1,3 +1,10 @@
+/*
+ * This code is released under GPLv2 License.
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ */
+
 #include "PauseState.h"
 #include "PauseState.h"
 #include "../FSMContext.h"
@@ -18,11 +25,11 @@ void PauseState::handleEvent(const FSMEvent& event)
 {
     switch (event.getType()) {
     case EVENT_USR_PLAY:
-        exitTo(new PlayingState(fsm));
+        exitTo(new PlayingState(_fsm));
         break;
 
     case EVENT_USR_STOP:
-        exitTo(new StopState(fsm));
+        exitTo(new StopState(_fsm));
         break;
 
     default:
@@ -37,6 +44,7 @@ void PauseState::enter()
 }
 
 
-std::string PauseState::getName() const {
+std::string PauseState::getName() const
+{
 	return "PAUSE";
 }

@@ -1,26 +1,37 @@
+/*
+ * This code is released under GPLv2 License.
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ */
+
 #ifndef FSMCONTEXT_H_
 #define FSMCONTEXT_H_
 
 #include "states/FSMState.h"
 #include <stdexcept>
 
-class FSMError: public std::runtime_error {
+class FSMError: public std::runtime_error
+{
 public:
 	FSMError(const std::string& msg) :
 			std::runtime_error(msg) {
 	}
 };
 
+
 /*
  * This structure is used to pass relevant data
  * to the FSMContext upon creation.
  */
-struct FSMData {
-};
+struct FSMData
+{};
 
-class FSMContext {
 
-    friend class FSMState;
+class FSMContext
+{
+
+friend class FSMState;
 
 public:
 	/**
@@ -65,14 +76,14 @@ private:
      *
      * @param newState The state to transit to.
      */
-    void setState(FSMState* const newState);
+    void _setState(FSMState* const newState);
 
-    void handleAllocationError(const std::string& msg);
+    void _handleAllocationError(const std::string& msg);
 
     FSMContext(const FSMContext& other);
     FSMContext& operator=(const FSMContext& rhs);
 
-    FSMState* currentState_;
+    FSMState* _currentState;
 
 };
 

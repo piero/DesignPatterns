@@ -1,7 +1,15 @@
+/*
+ * This code is released under GPLv2 License.
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ */
+
 #ifndef FSMEVENT_H_
 #define FSMEVENT_H_
 
-typedef enum {
+typedef enum
+{
     EVENT_NONE = 0,
 
     // Internal events
@@ -23,17 +31,17 @@ class FSMEvent
 {
 public:
 	FSMEvent(EventType type)
-        : type(type)
+        : _type(type)
     {}
 
     ~FSMEvent()
     {}
 
     const EventType getType() const
-    { return type; }
+    { return _type; }
 
 private:
-    EventType type;
+    EventType _type;
 };
 
 

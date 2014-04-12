@@ -1,9 +1,17 @@
+/*
+ * This code is released under GPLv2 License.
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ */
+
 #include "FSMContext.h"
 #include <iostream>
 
 using namespace std;
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
 	FSMData data;
 
 	FSMContext fsm(data);

@@ -1,3 +1,10 @@
+/*
+ * This code is released under GPLv2 License.
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ */
+
 #ifndef EVENTDISPATCHER_H_
 #define EVENTDISPATCHER_H_
 
@@ -6,7 +13,8 @@
 #include <list>
 #include <map>
 
-class EventDispatcher {
+class EventDispatcher
+{
 public:
 	EventDispatcher();
 	~EventDispatcher();
@@ -19,7 +27,7 @@ private:
 	typedef std::list<EventHandler*> HandlerList;
 	typedef std::map<EventType, HandlerList> Registrations;
 
-	Registrations registrations;
+	Registrations _registrations;
 };
 
 #endif /* EVENTDISPATCHER_H_ */

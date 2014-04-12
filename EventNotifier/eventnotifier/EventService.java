@@ -1,3 +1,10 @@
+/*
+ * This code is released under GPLv2 License.
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ */
+
 package eventnotifier;
 
 import java.util.Enumeration;
@@ -64,5 +71,3 @@ class Subscription {
     public Filter filter;
     public Subscriber subscriber;
 }
-
-

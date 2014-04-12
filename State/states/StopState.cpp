@@ -1,19 +1,30 @@
+/*
+ * This code is released under GPLv2 License.
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ */
+
 #include "StopState.h"
 #include "PlayingState.h"
 #include "../FSMContext.h"
 #include <iostream>
 
-StopState::StopState(FSMContext* const fsm) :
-		FSMState(STATE_STOP, fsm) {
-}
+StopState::StopState(FSMContext* const fsm)
+    : FSMState(STATE_STOP, fsm)
+{}
 
-StopState::~StopState() {
-}
 
-void StopState::handleEvent(const FSMEvent& event) {
-	switch (event.getType()) {
+StopState::~StopState()
+{}
+
+
+void StopState::handleEvent(const FSMEvent& event)
+{
+	switch (event.getType())
+    {
 	case EVENT_USR_PLAY:
-		exitTo(new PlayingState(fsm));
+		exitTo(new PlayingState(_fsm));
 		break;
 
 	default:
@@ -21,10 +32,14 @@ void StopState::handleEvent(const FSMEvent& event) {
 	}
 }
 
-void StopState::enter() {
+
+void StopState::enter()
+{
 	std::cout << "*** Stop State ***" << std::endl;
 }
 
-std::string StopState::getName() const {
+
+std::string StopState::getName() const
+{
 	return "STOP";
 }

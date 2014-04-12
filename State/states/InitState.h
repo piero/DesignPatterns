@@ -1,9 +1,17 @@
+/*
+ * This code is released under GPLv2 License.
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ */
+
 #ifndef INITSTATE_H_
 #define INITSTATE_H_
 
 #include "FSMState.h"
 
-class InitState: public FSMState {
+class InitState: public FSMState
+{
 public:
 	InitState(FSMContext* const fsm);
 	virtual ~InitState();

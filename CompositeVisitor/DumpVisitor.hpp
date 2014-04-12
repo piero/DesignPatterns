@@ -1,10 +1,18 @@
+/*
+ * This code is released under GPLv2 License.
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ */
+
 #ifndef DUMPVISITOR_H_
 #define DUMPVISITOR_H_
 
 #include "Visitor.hpp"
 #include <iostream>
 
-class DumpVisitor : public Visitor {
+class DumpVisitor : public Visitor
+{
 public:
 	DumpVisitor() {}
 	virtual ~DumpVisitor() {}

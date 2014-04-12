@@ -1,15 +1,23 @@
+/*
+ * This code is released under GPLv2 License.
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ */
+
 #ifndef COMPOSITE_H_
 #define COMPOSITE_H_
 
 #include <string>
 #include <vector>
 
-class Composite {
+class Composite
+{
 public:
 	virtual ~Composite() {}
 
 	virtual std::string getName() const
-	{ return name_; }
+	{ return _name; }
 
 	// Uniformity vs Safety
 //	virtual void add(Composite* c) = 0;
@@ -18,9 +26,10 @@ public:
 
 protected:
 	Composite(const std::string& name)
-	: name_(name) {}
+	: _name(name)
+    {}
 
-	std::string name_;
+	std::string _name;
 
 private:
 	Composite(const Composite& other);
@@ -36,10 +45,11 @@ public:
 	: Composite(name) {}
 
 	virtual ~Node()
-	{ nodes_.clear(); }
+	{ _nodes.clear(); }
 
+    // Uniformity vs Safety
 	/* virtual */ void add(Composite* c)
-	{ nodes_.push_back(c); }
+	{ _nodes.push_back(c); }
 
 	virtual void accept(class Visitor& visitor);
 
@@ -47,7 +57,7 @@ private:
 	Node(const Node& other);
 	Node& operator=(const Node& rhs);
 
-	std::vector<Composite*> nodes_;
+	std::vector<Composite*> _nodes;
 };
 
 
@@ -60,6 +70,7 @@ public:
 
 	virtual ~Leaf() {}
 
+    // Uniformity vs Safety
 //	virtual void add(Composite* c) {}
 
 	virtual void accept(class Visitor& visitor);
