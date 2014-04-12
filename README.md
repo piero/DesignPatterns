@@ -30,3 +30,5 @@ C++ implementation of some design patterns.
 * __Perception__
   * Application of _Abstract Factory_, _Composite_, and _Visitor_
   * _(works on Linux and OSX)_
+
+All content released under [GNU GPLv2](http://www.gnu.org/licenses/gpl-2.0.txt).
