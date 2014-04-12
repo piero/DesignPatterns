@@ -26,3 +26,7 @@ C++ implementation of some design patterns.
 * __Event Notifier__
   * Based on ["Event notifier: a pattern for event notification"](http://dl.acm.org/citation.cfm?id=335870)
   * _(implemented in Java)_
+
+* __Perception__
+  * Application of _Abstract Factory_, _Composite_, and _Visitor_
+  * _(works on Linux and OSX)_
