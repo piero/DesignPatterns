@@ -11,7 +11,8 @@
 #include "Visitor.hpp"
 #include <iostream>
 
-class DumpVisitor : public Visitor {
+class DumpVisitor : public Visitor
+{
 public:
 	DumpVisitor() {}
 	virtual ~DumpVisitor() {}

@@ -44,6 +44,7 @@ void PauseState::enter()
 }
 
 
-std::string PauseState::getName() const {
+std::string PauseState::getName() const
+{
 	return "PAUSE";
 }

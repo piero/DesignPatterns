@@ -30,7 +30,8 @@ typedef enum {
 class FSMContext;
 
 
-class FSMState {
+class FSMState
+{
 public:
 	FSMState(const StateType type, FSMContext* const fsm);
 	virtual ~FSMState();

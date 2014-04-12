@@ -12,12 +12,13 @@
 #include <vector>
 #include <iostream>
 
-class Composite {
+class Composite
+{
 public:
 	virtual ~Composite() {}
 
 	virtual std::string getName() const
-	{ return name_; }
+	{ return _name; }
 
 	// Uniformity vs Safety
 //	virtual void add(Composite* c) = 0;
@@ -26,9 +27,9 @@ public:
 
 protected:
 	Composite(const std::string& name)
-	: name_(name) {}
+	: _name(name) {}
 
-	std::string name_;
+	std::string _name;
 
 private:
 	Composite(const Composite& other);
@@ -45,12 +46,13 @@ public:
 	virtual ~Node()
 	{ nodes_.clear(); }
 
+    // Uniformity vs Safety
 	/*virtual*/ void add(Composite* c)
 	{ nodes_.push_back(c); }
 
 	virtual void dump()
 	{
-		std::cout << name_ << "/" << std::endl;
+		std::cout << _name << "/" << std::endl;
 		for (size_t i = 0; i < nodes_.size(); ++i) {
 			nodes_[i]->dump();
 		}
@@ -72,10 +74,11 @@ public:
 
 	virtual ~Leaf() {}
 
+    // Uniformity vs Safety
 //	virtual void add(Composite* c) {}
 
 	virtual void dump()
-	{ std::cout << "[" << name_ << "]" << std::endl; }
+	{ std::cout << "[" << _name << "]" << std::endl; }
 
 private:
 	Leaf(const Leaf& other);

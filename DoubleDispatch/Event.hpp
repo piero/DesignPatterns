@@ -24,20 +24,20 @@ public:
 	virtual ~Event() {}
 
 	virtual EventType getType() const
-	{ return type; }
+	{ return _type; }
 
 	virtual std::string getMessage() const
-	{ return message; }
+	{ return _message; }
 
 	virtual void accept(class EventHandler *handler) = 0;
 
 protected:
 	Event(EventType evtType, const std::string& msg)
-	: type(evtType),
-	  message(msg) {}
+	: _type(evtType),
+	  _message(msg) {}
 
-	EventType type;
-	std::string message;
+	EventType _type;
+	std::string _message;
 
 private:
 	Event(const Event&);

@@ -10,7 +10,8 @@
 
 #include "FSMState.h"
 
-class InitState: public FSMState {
+class InitState: public FSMState
+{
 public:
 	InitState(FSMContext* const fsm);
 	virtual ~InitState();

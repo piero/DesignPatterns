@@ -11,13 +11,14 @@
 #include "StopState.h"
 #include <iostream>
 
-PlayingState::PlayingState(FSMContext* const fsm) :
-FSMState(STATE_PLAYING, fsm) {
+PlayingState::PlayingState(FSMContext* const fsm)
+    : FSMState(STATE_PLAYING, fsm)
+{}
 
-}
 
-PlayingState::~PlayingState() {
-}
+PlayingState::~PlayingState()
+{}
+
 
 void PlayingState::handleEvent(const FSMEvent& event)
 {
@@ -41,6 +42,8 @@ void PlayingState::enter()
     std::cout << "*** Playing State ***" << std::endl;
 }
 
-std::string PlayingState::getName() const {
+
+std::string PlayingState::getName() const
+{
 	return "PLAYING";
 }

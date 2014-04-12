@@ -10,9 +10,11 @@
 
 #include "FSMState.h"
 
-class StopState: public FSMState {
+class StopState: public FSMState
+{
 public:
 	StopState(FSMContext* const fsm);
+    
 	virtual ~StopState();
 
 	virtual void handleEvent(const FSMEvent& event);

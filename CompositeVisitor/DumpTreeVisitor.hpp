@@ -15,43 +15,43 @@ class DumpTreeVisitor : public Visitor
 {
 public:
 	DumpTreeVisitor()
-	: level(0) {}
+	: _level(0) {}
 
 	virtual ~DumpTreeVisitor() {}
 
 	virtual void visit(Leaf& leaf)
-	{ std::cout << addPadding() << "[" << leaf.getName() << "]" << std::endl; }
+	{ std::cout << _addPadding() << "[" << leaf.getName() << "]" << std::endl; }
 
 	virtual void visit(Node& node)
-	{ std::cout << addPadding() << node.getName() << "/" << std::endl; }
+	{ std::cout << _addPadding() << node.getName() << "/" << std::endl; }
 
 	virtual void enter(Leaf& leaf)
-	{ ++level; }
+	{ ++_level; }
 
 	virtual void enter(Node& node)
-	{ ++level; }
+	{ ++_level; }
 
 	virtual void leave(Leaf& leaf)
-	{ --level; }
+	{ --_level; }
 
 	virtual void leave(Node& node)
-	{ --level; }
+	{ --_level; }
 
 
 private:
 	DumpTreeVisitor(const DumpTreeVisitor&);
 	DumpTreeVisitor& operator=(const DumpTreeVisitor&);
 
-	const std::string addPadding()
+	const std::string _addPadding()
 	{
 		std::string padding;
-		for (size_t i = 1; i < level; ++i) {
+		for (size_t i = 1; i < _level; ++i) {
 			padding += "    ";
 		}
 		return padding;
 	}
 
-	unsigned int level;
+	unsigned int _level;
 };
 
 #endif /* DUMPTREEVISITOR_H_ */

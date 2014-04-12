@@ -14,23 +14,23 @@ class CountVisitor : public Visitor
 {
 public:
 	CountVisitor()
-	: nodeCount(0),
-	  leafCount(0)
+	: _nodeCount(0),
+	  _leafCount(0)
 	{}
 
 	virtual ~CountVisitor() {}
 
 	unsigned int getNodeCount() const
-	{ return nodeCount; }
+	{ return _nodeCount; }
 
 	unsigned int getLeafCount() const
-	{ return leafCount; }
+	{ return _leafCount; }
 
 	virtual void visit(Leaf& leaf)
-	{ ++leafCount; }
+	{ ++_leafCount; }
 
 	virtual void visit(Node& node)
-	{ ++nodeCount; }
+	{ ++_nodeCount; }
 
 	virtual void enter(Leaf& leaf) {}
 	virtual void enter(Node& node) {}
@@ -38,8 +38,8 @@ public:
 	virtual void leave(Node& node) {}
 
 private:
-	unsigned int nodeCount;
-	unsigned int leafCount;
+	unsigned int _nodeCount;
+	unsigned int _leafCount;
 };
 
 

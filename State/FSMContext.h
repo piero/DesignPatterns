@@ -11,23 +11,27 @@
 #include "states/FSMState.h"
 #include <stdexcept>
 
-class FSMError: public std::runtime_error {
+class FSMError: public std::runtime_error
+{
 public:
 	FSMError(const std::string& msg) :
 			std::runtime_error(msg) {
 	}
 };
 
+
 /*
  * This structure is used to pass relevant data
  * to the FSMContext upon creation.
  */
-struct FSMData {
-};
+struct FSMData
+{};
 
-class FSMContext {
 
-    friend class FSMState;
+class FSMContext
+{
+
+friend class FSMState;
 
 public:
 	/**

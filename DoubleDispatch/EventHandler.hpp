@@ -39,12 +39,18 @@ private:
 class FirstEventHandler : public EventHandler
 {
 public:
-	FirstEventHandler() : EventHandler() {}
+	FirstEventHandler()
+        : EventHandler()
+    {}
+
 	virtual ~FirstEventHandler() {}
 
 	virtual void handle(ApplicationEvent& event)
-	{ std::cout << "[1] Handling Application Event: " << event.getMessage() << std::endl; }
+	{
+        std::cout << "[1] Handling Application Event: " << event.getMessage() << std::endl;
+    }
 
+    // In case we want to handle different types here:
 //	virtual void handle(UserEvent& event)
 //	{ std::cout << "[1] Handling User Event: " << event.getMessage() << std::endl; }
 
@@ -58,14 +64,21 @@ private:
 class SecondEventHandler : public EventHandler
 {
 public:
-	SecondEventHandler() {}
+	SecondEventHandler()
+        : EventHandler()
+    {}
+
 	virtual ~SecondEventHandler() {}
 
 	virtual void handle(ApplicationEvent& event)
-	{ std::cout << "[2] Handling Application Event: " << event.getMessage() << std::endl; }
+	{
+        std::cout << "[2] Handling Application Event: " << event.getMessage() << std::endl;
+    }
 
 	virtual void handle(UserEvent& event)
-	{ std::cout << "[2] Handling User Event: " << event.getMessage() << std::endl;	}
+	{
+        std::cout << "[2] Handling User Event: " << event.getMessage() << std::endl;
+    }
 
 private:
 	SecondEventHandler(const SecondEventHandler&);

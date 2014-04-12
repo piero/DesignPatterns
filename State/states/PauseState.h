@@ -10,7 +10,8 @@
 
 #include "FSMState.h"
 
-class PauseState: public FSMState {
+class PauseState: public FSMState
+{
 public:
 	PauseState(FSMContext* const fsm);
 	virtual ~PauseState();

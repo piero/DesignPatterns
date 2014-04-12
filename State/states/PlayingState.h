@@ -10,7 +10,8 @@
 
 #include "FSMState.h"
 
-class PlayingState: public FSMState {
+class PlayingState: public FSMState
+{
 public:
 	PlayingState(FSMContext* const fsm);
 	virtual ~PlayingState();

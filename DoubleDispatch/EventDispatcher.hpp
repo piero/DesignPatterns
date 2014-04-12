@@ -13,7 +13,8 @@
 #include <list>
 #include <map>
 
-class EventDispatcher {
+class EventDispatcher
+{
 public:
 	EventDispatcher();
 	~EventDispatcher();
@@ -26,7 +27,7 @@ private:
 	typedef std::list<EventHandler*> HandlerList;
 	typedef std::map<EventType, HandlerList> Registrations;
 
-	Registrations registrations;
+	Registrations _registrations;
 };
 
 #endif /* EVENTDISPATCHER_H_ */

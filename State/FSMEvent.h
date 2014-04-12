@@ -8,7 +8,8 @@
 #ifndef FSMEVENT_H_
 #define FSMEVENT_H_
 
-typedef enum {
+typedef enum
+{
     EVENT_NONE = 0,
 
     // Internal events
