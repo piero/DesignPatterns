@@ -27,7 +27,7 @@ void InitState::handleEvent(const FSMEvent& event)
 {
     switch (event.getType()) {
     case EVENT_USR_PLAY:
-        exitTo(new PlayingState(fsm));
+        exitTo(new PlayingState(_fsm));
         break;
 
     default:

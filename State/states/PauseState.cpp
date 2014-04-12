@@ -25,11 +25,11 @@ void PauseState::handleEvent(const FSMEvent& event)
 {
     switch (event.getType()) {
     case EVENT_USR_PLAY:
-        exitTo(new PlayingState(fsm));
+        exitTo(new PlayingState(_fsm));
         break;
 
     case EVENT_USR_STOP:
-        exitTo(new StopState(fsm));
+        exitTo(new StopState(_fsm));
         break;
 
     default:

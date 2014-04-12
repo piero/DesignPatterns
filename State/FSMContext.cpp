@@ -11,44 +11,44 @@
 
 FSMContext::FSMContext(const FSMData& data) {
 	try {
-		currentState_ = new InitState(this);
+		_currentState = new InitState(this);
 
 	} catch (std::bad_alloc& e) {
-		handleAllocationError(e.what());
+		_handleAllocationError(e.what());
 	}
 
-	currentState_->enter();
+	_currentState->enter();
 }
 
 FSMContext::~FSMContext() {
-	delete currentState_;
+	delete _currentState;
 }
 
 void FSMContext::handleEvent(const FSMEvent& event) {
-	currentState_->handleEvent(event);
+	_currentState->handleEvent(event);
 }
 
-void FSMContext::setState(FSMState* const newState) {
+void FSMContext::_setState(FSMState* const newState) {
 	if (newState == 0) {
 		throw FSMError("Can't set a NULL state");
 
 	} else {
-		currentState_->leave();
-		delete currentState_;
-		currentState_ = newState;
-		currentState_->enter();
+		_currentState->leave();
+		delete _currentState;
+		_currentState = newState;
+		_currentState->enter();
 	}
 }
 
 const StateType FSMContext::getStateType() const throw (FSMError) {
-	if (currentState_ == 0) {
+	if (_currentState == 0) {
 		throw FSMError("Current state is not set");
 	}
 
-	return currentState_->getType();
+	return _currentState->getType();
 }
 
-void FSMContext::handleAllocationError(const std::string& msg)
+void FSMContext::_handleAllocationError(const std::string& msg)
 {
     std::stringstream ss;
     ss << "Error creating state machine: " << msg << std::endl;
@@ -58,5 +58,5 @@ void FSMContext::handleAllocationError(const std::string& msg)
 
 std::string FSMContext::getStateName() const
 {
-	return currentState_->getName();
+	return _currentState->getName();
 }

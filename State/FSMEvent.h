@@ -30,17 +30,17 @@ class FSMEvent
 {
 public:
 	FSMEvent(EventType type)
-        : type(type)
+        : _type(type)
     {}
 
     ~FSMEvent()
     {}
 
     const EventType getType() const
-    { return type; }
+    { return _type; }
 
 private:
-    EventType type;
+    EventType _type;
 };
 
 

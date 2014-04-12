@@ -72,14 +72,14 @@ private:
      *
      * @param newState The state to transit to.
      */
-    void setState(FSMState* const newState);
+    void _setState(FSMState* const newState);
 
-    void handleAllocationError(const std::string& msg);
+    void _handleAllocationError(const std::string& msg);
 
     FSMContext(const FSMContext& other);
     FSMContext& operator=(const FSMContext& rhs);
 
-    FSMState* currentState_;
+    FSMState* _currentState;
 
 };
 

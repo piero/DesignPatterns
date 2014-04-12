@@ -65,11 +65,11 @@ public:
 	virtual void exitTo(FSMState* const nextState);
 
 	const StateType getType() const throw()
-	{ return type; }
+	{ return _type; }
 
 protected:
-    const StateType type;
-    FSMContext* const fsm;
+    const StateType _type;
+    FSMContext* const _fsm;
 };
 
 #endif /* FSMSTATE_H_ */
