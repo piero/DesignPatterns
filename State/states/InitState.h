@@ -1,3 +1,10 @@
+/*
+ * This code is released under GPLv2 License.
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ */
+
 #ifndef INITSTATE_H_
 #define INITSTATE_H_
 

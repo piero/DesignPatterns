@@ -1,3 +1,10 @@
+/*
+ * This code is released under GPLv2 License.
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ */
+
 package eventnotifier;
 
 import java.io.IOException;
@@ -27,7 +34,7 @@ public class EventNotifierDemo
 
         FaultEvent moderateEvent = new FaultEvent(FaultEvent.MODERATE);
         EventService.instance().publish(moderateEvent);  // This will be ignored
-        
+
         waitForUserInput("\nAdding filter and sending another MODERATE event.");
 
         // Add filter for MODERATE events
