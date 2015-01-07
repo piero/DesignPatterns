@@ -22,8 +22,6 @@ public:
     LinuxNetworkCollector();
     virtual ~LinuxNetworkCollector();
 
-    virtual void collectData(Composite& data);
-
 protected:
     /**
      * Append the names of available interfaces to the data parameter.
